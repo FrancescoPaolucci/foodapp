@@ -9,6 +9,7 @@ import Searchlocation from '../components/SearchLocation';
 
 
 const SearchScreen = () =>{
+    
     const[term, setTerm] = useState('Pasta');
     const [searchApi, results, errormessage] = useResults('');
     const [location, setLocation] = useState('Firenze');
@@ -36,7 +37,7 @@ const SearchScreen = () =>{
         <Text style={{paddingLeft:15}}>We have found {results.length} results</Text>
         <ScrollView>
         <ResultsList results={filterResultsByPrice('€')}  title="Cost Effective"/>
-        <ResultsList results={filterResultsByPrice('€€')} title ="Bit Pricier"/>
+        <ResultsList results={filterResultsByPrice('€€')} title ="Bit Pricier" />
         <ResultsList results={filterResultsByPrice('€€€')} title ="Bit Spender"/>
         </ScrollView>
     </View>
